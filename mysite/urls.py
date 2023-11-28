@@ -21,10 +21,12 @@ from mysite import settings
 from django.urls import include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('meat/', include('meat.urls')),
+    path("admin/", admin.site.urls),
+    path('', include("home.urls")),
+    path("meat/", include("meat.urls")),
 ]
 
 if settings.DEBUG:
     from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
     urlpatterns += staticfiles_urlpatterns()
