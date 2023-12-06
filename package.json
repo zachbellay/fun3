@@ -1,0 +1,19 @@
+{
+  "name": "fun",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^4.3.9"
+  },
+  "dependencies": {
+    "gsap": "^3.12.3",
+    "jquery": "^3.7.1",
+    "three": "^0.159.0"
+  }
+}

@@ -137,6 +137,23 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
+name = "django-vite"
+version = "3.0.1"
+description = "Integration of Vite in a Django project."
+optional = false
+python-versions = "*"
+files = [
+    {file = "django-vite-3.0.1.tar.gz", hash = "sha256:698977de63124305b0e3cf4afae5f0ffaa5ef041a336b1586b19579787dacb63"},
+    {file = "django_vite-3.0.1-py3-none-any.whl", hash = "sha256:60fbc743ce8187c545053afec0b8fe7f8e1633619c4e0433ebc4dd4f65d0d038"},
+]
+
+[package.dependencies]
+Django = ">=3.2"
+
+[package.extras]
+dev = ["black"]
+
+[[package]]
 name = "djlint"
 version = "1.34.0"
 description = "HTML Template Linter and Formatter"
@@ -778,4 +795,4 @@ brotli = ["Brotli"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "3abab95eb834f28ad5d95e17aabc77b320f4cb6667d35ffdc407b38633e6505e"
+content-hash = "475fc9544ac3fb00c3ae869f6601761e63a9f1db5c4aa613a19f3148f30f555f"

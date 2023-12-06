@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 import os
 from pathlib import Path
+import re
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -27,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-rc^*w^w&6g9_(uvx#6s*bnt!w)l0rdi%!l7mv#y%uc&x%wo5pk"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -44,8 +45,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "meat",
+    'django_vite',
     "home",
+    "meat",
+    "money",
 ]
 
 MIDDLEWARE = [
@@ -130,10 +133,31 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = "static/"
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    BASE_DIR / "money/dist"
+]
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
+# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+# def immutable_file_test(path, url):
+#     # Match filename with 12 hex digits before the extension
+#     # e.g. app.db8f2edc0c8a.js
+#     return re.match(r"^.+\.[0-9a-f]{8,12}\..+$", url)
+
+
+# WHITENOISE_IMMUTABLE_FILE_TEST = immutable_file_test
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+DJANGO_VITE = {
+  "default": {
+    "dev_mode": True
+  }
+}
+
