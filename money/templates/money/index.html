@@ -1,154 +1,155 @@
 {% load static %}
 {% load django_vite %}
-
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  {% vite_hmr_client %}
-  <meta charset="UTF-8" name="viewport" content="initial-scale=1, user-scalable=no">
-  <link rel="icon" type="image/svg+xml" href="/money/favicon.ico" />
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
-
-  <link rel="stylesheet" href="{% static 'money/style.css' %}" />
-
-  <!-- HTML Meta Tags -->
-  <title>The Scale of Wealth</title>
-
-  <meta property="og:title" content="The Scale of Wealth">
-  <meta property="og:site_name" content="zach.ws">
-  <meta property="og:url" content="https://zach.ws/money/">
-  <meta property="og:type" content="website">
-  <meta name="description" content="A visualization of the scale of wealth of humanity. See Jeff Bezos' fortune next to the Statue of Liberty. How does your wealth compare?">
-
-  <!-- Facebook Meta Tags -->
-  <meta property="og:url" content="https://zach.ws/money/">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="The Scale of Wealth">
-  <meta property="og:image" content="https://zach.ws/social-cards/scale-of-wealth.png">
-  <meta property="og:description" content="See Jeff Bezos' fortune next to the Statue of Liberty. How does your wealth compare?">
-
-  <!-- Twitter Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta property="twitter:domain" content="zach.ws">
-  <meta property="twitter:url" content="https://zach.ws/">
-  <meta name="twitter:title" content="The Scale of Wealth">
-  <meta name="twitter:image" content="https://zach.ws/social-cards/scale-of-wealth.png">
-  <meta name="twitter:description" content="See Jeff Bezo's fortune next to the Statue of Liberty. How does your wealth compare?">
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/money/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/money/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/money/favicon-16x16.png">
-  <link rel="manifest" href="/money/site.webmanifest">
-
-</head>
-
-<body>
-
-  <div class="page-loader">
-    <div class="loader">Loading...</div>
-  </div>
-
-  <div id="app-container" style="width:100vw; height:100vh; z-index: 10001;">
-    <canvas id="app"></canvas>
-
-    <div class="item-container">
-      <div class="item-title"></div>
-      <div class="item-description"></div>
+  <head>
+    {% vite_hmr_client %}
+    <meta charset="UTF-8"
+          name="viewport"
+          content="initial-scale=1, user-scalable=no">
+    <link rel="icon" type="image/svg+xml" href="/money/favicon.ico" />
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'money/style.css' %}" />
+    <!-- HTML Meta Tags -->
+    <title>The Scale of Wealth</title>
+    <meta property="og:title" content="The Scale of Wealth">
+    <meta property="og:site_name" content="zach.ws">
+    <meta property="og:url" content="https://zach.ws/money/">
+    <meta property="og:type" content="website">
+    <meta name="description"
+          content="A visualization of the scale of wealth of humanity. See Jeff Bezos' fortune next to the Statue of Liberty. How does your wealth compare?">
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://zach.ws/money/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="The Scale of Wealth">
+    <meta property="og:image"
+          content="https://zach.ws/social-cards/scale-of-wealth.png">
+    <meta property="og:description"
+          content="See Jeff Bezos' fortune next to the Statue of Liberty. How does your wealth compare?">
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="zach.ws">
+    <meta property="twitter:url" content="https://zach.ws/">
+    <meta name="twitter:title" content="The Scale of Wealth">
+    <meta name="twitter:image"
+          content="https://zach.ws/social-cards/scale-of-wealth.png">
+    <meta name="twitter:description"
+          content="See Jeff Bezo's fortune next to the Statue of Liberty. How does your wealth compare?">
+    <link rel="apple-touch-icon"
+          sizes="180x180"
+          href="/money/apple-touch-icon.png">
+    <link rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/money/favicon-32x32.png">
+    <link rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/money/favicon-16x16.png">
+    <link rel="manifest" href="/money/site.webmanifest">
+  </head>
+  <body>
+    <div class="page-loader">
+      <div class="loader">Loading...</div>
     </div>
-
-    <div class="title-page">
-
-      <a class="main-page-link" href="https://zach.ws">zach.ws</a>
-      <div class="video-overlay container h-100">
-
-        <div class=" h-100 d-flex justify-content-center align-items-center">
-          <div class="text-center">
-            <h1 class="title-font">The Scale of Wealth</h1>
-            <h4 class="subtitle-font">Created by Zach Bellay</h4>
-            <h5 class="go-right-mobile">Swipe left to begin ➔</h5>
-          </div>
-
-        </div>
-
+    <div id="app-container" style="width:100vw; height:100vh; z-index: 10001;">
+      <canvas id="app"></canvas>
+      <div class="item-container">
+        <div class="item-title"></div>
+        <div class="item-description"></div>
       </div>
-
-      <h5 class="go-right-desktop">Press the right arrow key or swipe left to begin ➔</h5>
-
-    </div>
-
-
-    <div class="end-page" style="left: 100%;">
-      <a class="main-page-link" href="https://zach.ws">zach.ws</a>
-      <!-- <div class="video-bg">
+      <div class="title-page">
+        <a class="main-page-link" href="https://zach.ws">zach.ws</a>
+        <div class="video-overlay container h-100">
+          <div class=" h-100 d-flex justify-content-center align-items-center">
+            <div class="text-center">
+              <h1 class="title-font">The Scale of Wealth</h1>
+              <h4 class="subtitle-font">Created by Zach Bellay</h4>
+              <div class="subtitle-font">January 2022</div>
+              <h5 class="go-right-mobile">Swipe left to begin ➔</h5>
+            </div>
+          </div>
+        </div>
+        <h5 class="go-right-desktop">Press the right arrow key or swipe left to begin ➔</h5>
+      </div>
+      <div class="end-page" style="left: 100%;">
+        <a class="main-page-link" href="https://zach.ws">zach.ws</a>
+        <!-- <div class="video-bg">
         <video autoplay loop muted>
           <source src="videos/money.mp4" type="video/mp4">
         </video>
       </div> -->
-      <div class=" h-100 d-flex justify-content-center align-items-center">
-        <div class="text-center">
-          <h4 class="subtitle-font">The Scale of Wealth</h4>
-          <div class="subtitle-font-2">
-            Made with ❤️ and
-
-            <svg style="height: 0.9em; vertical-align: -.125em;" aria-hidden="true" focusable="false" data-prefix="fas"
-              data-icon="code" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" data-fa-i2svg="">
-              <defs>
+        <div class=" h-100 d-flex justify-content-center align-items-center">
+          <div class="text-center">
+            <h4 class="subtitle-font">The Scale of Wealth</h4>
+            <div class="subtitle-font-2">
+              Made with ❤️ and
+              <svg style="height: 0.9em;
+                          vertical-align: -.125em"
+                   aria-hidden="true"
+                   focusable="false"
+                   data-prefix="fas"
+                   data-icon="code"
+                   role="img"
+                   xmlns="http://www.w3.org/2000/svg"
+                   viewBox="0 0 640 512"
+                   data-fa-i2svg="">
+                <defs>
                 <filter id="dropshadow" x="0" y="0" width="200%" height="200%">
-                  <feOffset result="offOut" in="SourceAlpha" dx="0" dy="0" />
-                  <feGaussianBlur result="blurOut" in="offOut" stdDeviation="30" />
-                  <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+                <feOffset result="offOut" in="SourceAlpha" dx="0" dy="0" />
+                <feGaussianBlur result="blurOut" in="offOut" stdDeviation="30" />
+                <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
                 </filter>
-              </defs>
-              <path fill="currentColor"
-                d="M278.9 511.5l-61-17.7c-6.4-1.8-10-8.5-8.2-14.9L346.2 8.7c1.8-6.4 8.5-10 14.9-8.2l61 17.7c6.4 1.8 10 8.5 8.2 14.9L293.8 503.3c-1.9 6.4-8.5 10.1-14.9 8.2zm-114-112.2l43.5-46.4c4.6-4.9 4.3-12.7-.8-17.2L117 256l90.6-79.7c5.1-4.5 5.5-12.3.8-17.2l-43.5-46.4c-4.5-4.8-12.1-5.1-17-.5L3.8 247.2c-5.1 4.7-5.1 12.8 0 17.5l144.1 135.1c4.9 4.6 12.5 4.4 17-.5zm327.2.6l144.1-135.1c5.1-4.7 5.1-12.8 0-17.5L492.1 112.1c-4.8-4.5-12.4-4.3-17 .5L431.6 159c-4.6 4.9-4.3 12.7.8 17.2L523 256l-90.6 79.7c-5.1 4.5-5.5 12.3-.8 17.2l43.5 46.4c4.5 4.9 12.1 5.1 17 .6z"
-                filter="url(#dropshadow)"></path>
-            </svg>
-            by Zach Bellay
+                </defs>
+                <path fill="currentColor" d="M278.9 511.5l-61-17.7c-6.4-1.8-10-8.5-8.2-14.9L346.2 8.7c1.8-6.4 8.5-10 14.9-8.2l61 17.7c6.4 1.8 10 8.5 8.2 14.9L293.8 503.3c-1.9 6.4-8.5 10.1-14.9 8.2zm-114-112.2l43.5-46.4c4.6-4.9 4.3-12.7-.8-17.2L117 256l90.6-79.7c5.1-4.5 5.5-12.3.8-17.2l-43.5-46.4c-4.5-4.8-12.1-5.1-17-.5L3.8 247.2c-5.1 4.7-5.1 12.8 0 17.5l144.1 135.1c4.9 4.6 12.5 4.4 17-.5zm327.2.6l144.1-135.1c5.1-4.7 5.1-12.8 0-17.5L492.1 112.1c-4.8-4.5-12.4-4.3-17 .5L431.6 159c-4.6 4.9-4.3 12.7.8 17.2L523 256l-90.6 79.7c-5.1 4.5-5.5 12.3-.8 17.2l43.5 46.4c4.5 4.9 12.1 5.1 17 .6z" filter="url(#dropshadow)">
+                </path>
+              </svg>
+              by Zach Bellay
+            </div>
+            <div class="subtitle-font-2">Check out more visualizations at</div>
+            <div class="pt-4"
+                 style="display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-direction: row;
+                        position: relative">
+              <a href="https://zach.ws"
+                 style="color: #fff;
+                        font-size: 30px;
+                        font-weight: 700;
+                        cursor: pointer;
+                        text-decoration: none;
+                        z-index: 1000;
+                        transition: opacity .3s;
+                        text-shadow: 1px 1px 2px #000,-1px -1px 2px #000">zach.ws!</a>
+              <svg xmlns="http://www.w3.org/2000/svg"
+                   style="position: absolute;
+                          right: -10px;
+                          animation: arrowAnimation 10s ease 0s infinite normal forwards"
+                   width="150"
+                   height="100"
+                   fill="white"
+                   class="bi bi-arrow-left"
+                   viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+              </svg>
+            </div>
           </div>
-          <div class="subtitle-font-2">
-            Check out more visualizations at
-          </div>
-          <div class="pt-4"
-            style="display: flex; align-items: center;  justify-content: center; flex-direction: row; position: relative;">
-            <a href="https://zach.ws" style="  color: #fff;
-            font-size: 30px;
-            font-weight: 700;
-            cursor: pointer;
-            text-decoration: none;
-            z-index: 1000;
-            transition: opacity .3s;
-            text-shadow: 1px 1px 2px #000,-1px -1px 2px #000;">zach.ws!</a>
-            <svg xmlns="http://www.w3.org/2000/svg"
-              style="position: absolute; right: -10px; animation: arrowAnimation 10s ease 0s infinite normal forwards;"
-              width="150" height="100" fill="white" class="bi bi-arrow-left" viewBox="0 0 16 16">
-              <path fill-rule="evenodd"
-                d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
-            </svg>
-
-          </div>
-
         </div>
       </div>
     </div>
-
-  </div>
-
-
-</body>
-
-{% vite_asset 'main.js' %}
-
+  </body>
+  {% vite_asset 'money/main.js' %}
 </html>

@@ -3,9 +3,10 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { gsap } from "gsap";
 import $ from "jquery";
-import { Uint8ClampedBufferAttribute } from 'three';
 
-var BASE = import.meta.env.BASE_URL + 'money/public/'
+// regrettably, I am not importing these assets via the bundler
+// so I'm raw dogging the url 
+var BASE = import.meta.env.BASE_URL + '/public/';
 
 var screen_width = $(window).width();
 

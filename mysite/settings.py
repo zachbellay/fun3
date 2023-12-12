@@ -11,8 +11,9 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 import os
-from pathlib import Path
 import re
+from pathlib import Path
+
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -29,6 +30,7 @@ SECRET_KEY = "django-insecure-rc^*w^w&6g9_(uvx#6s*bnt!w)l0rdi%!l7mv#y%uc&x%wo5pk
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+DEBUG_PROPAGATE_EXCEPTIONS = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -157,7 +159,10 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 DJANGO_VITE = {
   "default": {
-    "dev_mode": True
+    "dev_mode": DEBUG,
+    # 'manifest_path': './money/dist/money/manifest.json',
+    'static_url_prefix' : 'money'
   }
 }
+
 
