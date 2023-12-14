@@ -1,0 +1,7 @@
+providers = ['...', 'python']
+
+[phases.setup]
+cmds = ['cd ./money && npm install']
+
+[phases.build]
+cmds = ['cd ./money && vite build']
