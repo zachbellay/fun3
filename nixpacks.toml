@@ -5,3 +5,6 @@ cmds = ['cd ./money && npm install']
 
 [phases.build]
 cmds = ['cd ./money && vite build']
+
+[start]
+cmds = 'python manage.py migrate && python manage.py collectstatic --noinput && gunicorn mysite.wsgi'
