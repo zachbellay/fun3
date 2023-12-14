@@ -7,5 +7,8 @@
         "startCommand": "python manage.py migrate && python manage.py collectstatic --noinput && gunicorn mysite.wsgi",
         "restartPolicyType": "ON_FAILURE",
         "restartPolicyMaxRetries": 10
-    }
+    },
+    "providers": [
+        "python"
+    ]
 }
