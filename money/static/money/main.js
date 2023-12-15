@@ -6,7 +6,7 @@ import $ from "jquery";
 
 // regrettably, I am not importing these assets via the bundler
 // so I'm raw dogging the url 
-var BASE = import.meta.env.BASE_URL + '/public/';
+var BASE = import.meta.env.BASE_URL + '/public';
 
 var screen_width = $(window).width();
 
@@ -68,7 +68,7 @@ function modelLoader(url) {
 
   return new Promise((resolve, reject) => {
     const loader = new GLTFLoader();
-    loader.load(BASE + url, data => resolve(data), null, reject);
+    loader.load(BASE + '/' + url, data => resolve(data), null, reject);
   });
 }
 
