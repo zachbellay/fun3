@@ -1,10 +1,12 @@
 providers = ['python']
 
 [phases.setup]
-cmds = ['cd ./money && npm install']
+    nixPkgs = ['...', 'nodejs']
 
-[phases.build]
-cmds = ['cd ./money && vite build']
+[phases.money-install]
+    dependsOn = ['setup']
+    cmds = ['npm install --prefix money']
 
-[start]
-cmds = 'python manage.py migrate && python manage.py collectstatic --noinput && gunicorn mysite.wsgi'
+[phases.money-build]
+    dependsOn = ['money-install']
+    cmds = ['npm run build --prefix money']
