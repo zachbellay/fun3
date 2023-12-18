@@ -26,10 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-rc^*w^w&6g9_(uvx#6s*bnt!w)l0rdi%!l7mv#y%uc&x%wo5pk"
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
 DEBUG_PROPAGATE_EXCEPTIONS = True
 
 ALLOWED_HOSTS = ["*"]
@@ -47,7 +46,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    'django_vite',
+    "django_vite",
     "home",
     "meat",
     "money",
@@ -135,10 +134,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = "static/"
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-    BASE_DIR / "money/dist"
-]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static"), BASE_DIR / "money/dist"]
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 # STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
@@ -155,14 +151,3 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
-
-DJANGO_VITE = {
-  "default": {
-    "dev_mode": DEBUG,
-    # 'manifest_path': './money/dist/money/manifest.json',
-    'static_url_prefix' : 'money'
-  }
-}
-
-
