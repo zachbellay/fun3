@@ -6,20 +6,20 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- HTML Meta Tags -->
-        {% comment %} <title>zach.ws</title> {% endcomment %}
-        {% comment %} <meta property="og:title" content="zach.ws">
-    <meta property="og:site_name" content="zach.ws">
-        <meta property="og:url" content="https://zach.ws"> {% endcomment %}
+        {% comment %} <title>fun.zachbellay.com</title> {% endcomment %}
+        {% comment %} <meta property="og:title" content="fun.zachbellay.com">
+    <meta property="og:site_name" content="fun.zachbellay.com">
+        <meta property="og:url" content="https://fun.zachbellay.com"> {% endcomment %}
         <meta property="og:type" content="website">
         <!-- Facebook Meta Tags -->
-        {% comment %} <meta property="og:url" content="https://zach.ws/"> {% endcomment %}
+        {% comment %} <meta property="og:url" content="https://fun.zachbellay.com/"> {% endcomment %}
         <meta property="og:type" content="website">
-        {% comment %} <meta property="og:title" content="zach.ws"> {% endcomment %}
+        {% comment %} <meta property="og:title" content="fun.zachbellay.com"> {% endcomment %}
         <!-- Twitter Meta Tags -->
         <meta name="twitter:card" content="summary_large_image">
-        {% comment %} <meta property="twitter:domain" content="zach.ws">
-    <meta property="twitter:url" content="https://zach.ws/">
-        <meta name="twitter:title" content="zach.ws"> {% endcomment %}
+        {% comment %} <meta property="twitter:domain" content="fun.zachbellay.com">
+    <meta property="twitter:url" content="https://fun.zachbellay.com/">
+        <meta name="twitter:title" content="fun.zachbellay.com"> {% endcomment %}
         <link rel="apple-touch-icon"
               sizes="180x180"
               href="{% static 'home/apple-touch-icon.png' %}">
@@ -142,54 +142,61 @@
                 <div class="row pt-5">
                     <div class="col-md-1"></div>
                     <div class="col-md-10 site-title" style="text-align: center;">
-                        <a href="https://zach.ws" style="color:black; text-decoration: none;">
-                            <span class="big">zach.w</span><span class="small">ork</span><span class="big">s</span><span class="small">heet</span></a>
+                        <a href="https://fun.zachbellay.com"
+                           style="color:black;
+                                  text-decoration: none">
+                            <span class="big">fun.zachbellay.com</span>
+                        </div>
+                        <div class="col-md-1"></div>
                     </div>
-                    <div class="col-md-1"></div>
+                    <div class="row pt-5">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-5 project">
+                            <a href="/meat">
+                                <div id="meat"
+                                     class="image"
+                                     style="background: url('{% static 'home/meat.png' %}')">
+                                    <div class="link">American Meat Consumption</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-5 project">
+                            <a href="/money">
+                                <div id="money"
+                                     class="image"
+                                     style="background: url('{% static 'home/money.png' %}')">
+                                    <div class="link">The Scale of Wealth</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-1"></div>
+                    </div>
+                    <div class="row pt-5">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-10 footer">
+                            Made with ❤️ and
+                            <svg style="height: 0.9em;
+                                        vertical-align: -.125em"
+                                 aria-hidden="true"
+                                 focusable="false"
+                                 data-prefix="fas"
+                                 data-icon="code"
+                                 role="img"
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 viewBox="0 0 640 512"
+                                 data-fa-i2svg="">
+                                <path fill="currentColor" d="M278.9 511.5l-61-17.7c-6.4-1.8-10-8.5-8.2-14.9L346.2 8.7c1.8-6.4 8.5-10 14.9-8.2l61 17.7c6.4 1.8 10 8.5 8.2 14.9L293.8 503.3c-1.9 6.4-8.5 10.1-14.9 8.2zm-114-112.2l43.5-46.4c4.6-4.9 4.3-12.7-.8-17.2L117 256l90.6-79.7c5.1-4.5 5.5-12.3.8-17.2l-43.5-46.4c-4.5-4.8-12.1-5.1-17-.5L3.8 247.2c-5.1 4.7-5.1 12.8 0 17.5l144.1 135.1c4.9 4.6 12.5 4.4 17-.5zm327.2.6l144.1-135.1c5.1-4.7 5.1-12.8 0-17.5L492.1 112.1c-4.8-4.5-12.4-4.3-17 .5L431.6 159c-4.6 4.9-4.3 12.7.8 17.2L523 256l-90.6 79.7c-5.1 4.5-5.5 12.3-.8 17.2l43.5 46.4c4.5 4.9 12.1 5.1 17 .6z">
+                                </path>
+                            </svg>
+                            by <a href="https://zachbellay.com">Zach Bellay</a>
+                        </div>
+                        <div class="col-md-1"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <small class="col-md-10 pt-2" style="text-align: center">Inspired by <a href="https://neal.fun">neal.fun</a></small>
+                        <div class="col-md-1"></div>
+                    </div>
                 </div>
-                <div class="row pt-5">
-                    <div class="col-md-1"></div>
-                    <div class="col-md-5 project">
-                        <a href="/meat">
-                            <div id="meat"
-                                 class="image"
-                                 style="background: url('{% static 'home/meat.png' %}')">
-                                <div class="link">American Meat Consumption</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-5 project">
-                        <a href="/money">
-                            <div id="money"
-                                 class="image"
-                                 style="background: url('{% static 'home/money.png' %}')">
-                                <div class="link">The Scale of Wealth</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-1"></div>
-                </div>
-                <div class="row pt-5">
-                    <div class="col-md-1"></div>
-                    <div class="col-md-10 footer">
-                        Made with ❤️ and
-                        <svg style="height: 0.9em;
-                                    vertical-align: -.125em"
-                             aria-hidden="true"
-                             focusable="false"
-                             data-prefix="fas"
-                             data-icon="code"
-                             role="img"
-                             xmlns="http://www.w3.org/2000/svg"
-                             viewBox="0 0 640 512"
-                             data-fa-i2svg="">
-                            <path fill="currentColor" d="M278.9 511.5l-61-17.7c-6.4-1.8-10-8.5-8.2-14.9L346.2 8.7c1.8-6.4 8.5-10 14.9-8.2l61 17.7c6.4 1.8 10 8.5 8.2 14.9L293.8 503.3c-1.9 6.4-8.5 10.1-14.9 8.2zm-114-112.2l43.5-46.4c4.6-4.9 4.3-12.7-.8-17.2L117 256l90.6-79.7c5.1-4.5 5.5-12.3.8-17.2l-43.5-46.4c-4.5-4.8-12.1-5.1-17-.5L3.8 247.2c-5.1 4.7-5.1 12.8 0 17.5l144.1 135.1c4.9 4.6 12.5 4.4 17-.5zm327.2.6l144.1-135.1c5.1-4.7 5.1-12.8 0-17.5L492.1 112.1c-4.8-4.5-12.4-4.3-17 .5L431.6 159c-4.6 4.9-4.3 12.7.8 17.2L523 256l-90.6 79.7c-5.1 4.5-5.5 12.3-.8 17.2l43.5 46.4c4.5 4.9 12.1 5.1 17 .6z">
-                            </path>
-                        </svg>
-                        by <a href="https://zachbellay.com">Zach Bellay</a>
-                    </div>
-                    <div class="col-md-1"></div>
-                </div>
-            </div>
-        </body>
-    </html>
+            </body>
+        </html>
