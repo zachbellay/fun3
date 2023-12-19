@@ -28,3 +28,16 @@ chmod +x setup_database.sh
 ```bash
 python manage.py migrate
 ```
+
+### Get local dev setup
+
+Terminal 1:
+```sh
+python manage.py runserver --settings=mysite.settings.local
+```
+
+Terminal 2:
+```sh
+cd money && vite dev
+```
+
